@@ -8,31 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-
-        /* ══════════════════════════════════════════════════════════
-           DESIGN SYSTEM — preserved exactly per brief
-        ══════════════════════════════════════════════════════════ */
         :root {
-            --bg:         #08080F;
-            --surface:    #0E0E1B;
-            --surface2:   #141424;
-            --surface3:   #1C1C2E;
-            --border:     #20203A;
-            --border2:    #2C2C48;
-            --text:       #EEEEF8;
-            --text2:      #7A7AA0;
-            --text3:      #44446A;
-            --red:        #E04030;
-            --red-glow:   rgba(224,64,48,0.18);
-            --blue:       #5058F0;
-            --blue-glow:  rgba(80,88,240,0.18);
-            --gold:       #C9A050;
-            --green:      #22C55E;
-            --green-glow: rgba(34,197,94,0.15);
-            --wa:         #25D366;
+            --bg:        #08080F;
+            --surface:   #0E0E1B;
+            --surface2:  #141424;
+            --surface3:  #1C1C2E;
+            --border:    #20203A;
+            --border2:   #2C2C48;
+            --text:      #EEEEF8;
+            --text2:     #7A7AA0;
+            --text3:     #44446A;
+            --red:       #E04030;
+            --red-glow:  rgba(224,64,48,0.18);
+            --blue:      #5058F0;
+            --blue-glow: rgba(80,88,240,0.18);
+            --gold:      #C9A050;
+            --green:     #22C55E;
+            --green-glow:rgba(34,197,94,0.15);
+            --wa:        #25D366;
         }
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior: smooth; }
 
         body {
@@ -47,16 +43,14 @@
         ::-webkit-scrollbar-track { background: var(--bg); }
         ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
 
-        /* ══════════════════════════════════════════════════════════
-           NAV
-        ══════════════════════════════════════════════════════════ */
+        /* ─── NAV ─── */
         nav {
             position: sticky; top: 0; z-index: 100;
             background: rgba(8,8,15,0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0 52px; height: 58px;
+            padding: 0 52px; height: 68px;
             display: flex; align-items: center; justify-content: space-between;
             transition: background 0.3s;
         }
@@ -65,7 +59,6 @@
             font-size: 20px; font-weight: 700;
             letter-spacing: 3px; text-transform: uppercase;
             color: var(--text); text-decoration: none;
-            flex-shrink: 0;
         }
         .nav-brand span { color: var(--red); }
         .nav-links { list-style: none; display: flex; gap: 32px; align-items: center; }
@@ -78,34 +71,16 @@
         .btn-wa-nav {
             display: flex; align-items: center; gap: 8px;
             background: var(--wa); color: #fff;
-            padding: 9px 22px; border-radius: 3px;
+            padding: 9px 22px; border-radius: 4px;
             font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
             text-decoration: none; text-transform: uppercase;
-            transition: filter 0.2s; flex-shrink: 0;
+            transition: filter 0.2s;
         }
         .btn-wa-nav:hover { filter: brightness(1.1); }
 
-        /* Hamburger */
-        .nav-hamburger {
-            display: none;
-            flex-direction: column; justify-content: center;
-            gap: 5px; cursor: pointer;
-            background: none; border: none; padding: 8px 4px;
-        }
-        .nav-hamburger span {
-            display: block; width: 22px; height: 2px;
-            background: var(--text2);
-            transition: transform 0.25s ease, opacity 0.2s ease, background 0.2s;
-        }
-        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--text); }
-        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--text); }
-
-        /* ══════════════════════════════════════════════════════════
-           HERO
-        ══════════════════════════════════════════════════════════ */
+        /* ─── HERO ─── */
         .hero {
-            min-height: 92vh;
+            min-height: 90vh;
             display: flex; flex-direction: column;
             align-items: center; justify-content: center;
             padding: 80px 52px;
@@ -120,22 +95,16 @@
             background-size: cover; background-position: center;
             opacity: 0.22;
             filter: grayscale(30%);
-            transform-origin: center;
-            animation: kenBurns 20s ease-in-out infinite alternate;
-        }
-        @keyframes kenBurns {
-            0%   { transform: scale(1); }
-            100% { transform: scale(1.07); }
         }
         .hero::before {
             content: '';
             position: absolute; inset: 0; z-index: 1;
             background:
-                linear-gradient(to bottom, rgba(8,8,15,0.6) 0%, rgba(8,8,15,0.2) 40%, rgba(8,8,15,0.88) 100%),
-                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,160,80,0.07) 0%, transparent 70%);
+                linear-gradient(to bottom, rgba(8,8,15,0.6) 0%, rgba(8,8,15,0.3) 40%, rgba(8,8,15,0.85) 100%),
+                radial-gradient(ellipse 80% 60% at 50% 0%, rgba(80,88,240,0.10) 0%, transparent 70%);
         }
         .hero-content { position: relative; z-index: 2; }
-
+        .hero-content { position: relative; z-index: 1; }
         .hero-eyebrow {
             display: inline-flex; align-items: center; gap: 10px;
             border: 1px solid var(--border2);
@@ -145,54 +114,29 @@
             text-transform: uppercase;
             padding: 8px 20px; border-radius: 2px;
             margin-bottom: 36px;
-            opacity: 0;
-            animation: fadeUpEl 0.55s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
         }
         .eyebrow-dot {
             width: 6px; height: 6px; border-radius: 50%;
             background: var(--gold); animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-
+        @keyframes pulse {
+            0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+        }
         .hero h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(46px, 7vw, 78px);
-            font-weight: 700; line-height: 1.0; letter-spacing: -1px;
+            font-size: 78px; font-weight: 700;
+            line-height: 1.0; letter-spacing: -1px;
             max-width: 860px; margin: 0 auto 28px;
         }
         .hero h1 em { color: var(--red); font-style: normal; }
-
-        /* Text reveal: each line */
-        .reveal-line {
-            display: block;
-            opacity: 0;
-            animation: fadeUpEl 0.65s cubic-bezier(0.22,1,0.36,1) forwards;
-        }
-        .reveal-line:nth-child(1) { animation-delay: 0.3s; }
-        .reveal-line:nth-child(2) { animation-delay: 0.5s; }
-        .reveal-line:nth-child(3) { animation-delay: 0.7s; }
-
-        @keyframes fadeUpEl {
-            0%   { opacity: 0; transform: translateY(28px); }
-            100% { opacity: 1; transform: none; }
-        }
-
         .hero-sub {
             font-size: 17px; color: var(--text2);
             max-width: 520px; margin: 0 auto 52px; line-height: 1.8;
             font-weight: 300; letter-spacing: 0.2px;
-            opacity: 0;
-            animation: fadeUpEl 0.55s cubic-bezier(0.22,1,0.36,1) 0.9s forwards;
         }
-        .hero-ctas {
-            display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeUpEl 0.55s cubic-bezier(0.22,1,0.36,1) 1.1s forwards;
-        }
+        .hero-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
-        /* ══════════════════════════════════════════════════════════
-           BUTTONS
-        ══════════════════════════════════════════════════════════ */
+        /* ─── BUTTONS ─── */
         .btn-primary {
             background: var(--red); color: #fff;
             padding: 14px 36px; border-radius: 3px;
@@ -200,9 +144,11 @@
             font-size: 15px; font-weight: 600; letter-spacing: 2px;
             text-decoration: none; text-transform: uppercase;
             transition: filter 0.2s, box-shadow 0.2s;
-            cursor: pointer;
         }
-        .btn-primary:hover { filter: brightness(1.1); box-shadow: 0 0 28px var(--red-glow); }
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 0 28px var(--red-glow);
+        }
         .btn-ghost {
             background: transparent; color: var(--text);
             padding: 14px 36px; border-radius: 3px;
@@ -211,13 +157,35 @@
             text-decoration: none; text-transform: uppercase;
             border: 1px solid var(--border2);
             transition: border-color 0.2s, color 0.2s;
-            cursor: pointer;
         }
         .btn-ghost:hover { border-color: var(--text); color: var(--text); }
 
-        /* ══════════════════════════════════════════════════════════
-           STATS BAR
-        ══════════════════════════════════════════════════════════ */
+        /* ─── PHOTO STRIP ─── */
+        .photo-strip {
+            display: flex; height: 220px;
+            overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .photo-strip-item {
+            flex: 1; overflow: hidden; position: relative; cursor: pointer;
+        }
+        .photo-strip-item + .photo-strip-item {
+            border-left: 1px solid var(--border);
+        }
+        .photo-strip-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(20%) brightness(0.75);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+        .photo-strip-item:hover img {
+            transform: scale(1.06);
+            filter: grayscale(0%) brightness(0.9);
+        }
+        /* Fallback if images not loaded yet */
+        .photo-strip-item { background: var(--surface2); }
+
+        /* ─── STATS BAR ─── */
         .stats-bar {
             background: var(--surface);
             border-top: 1px solid var(--border);
@@ -229,83 +197,11 @@
         .stat-n {
             font-family: 'Oswald', sans-serif;
             font-size: 32px; font-weight: 700; color: var(--red);
-            letter-spacing: 1px; font-variant-numeric: tabular-nums;
+            letter-spacing: 1px;
         }
-        .stat-l {
-            font-size: 11px; color: var(--text2); margin-top: 4px;
-            letter-spacing: 2px; text-transform: uppercase;
-        }
+        .stat-l { font-size: 11px; color: var(--text2); margin-top: 4px; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* ══════════════════════════════════════════════════════════
-           PHOTO STRIP
-        ══════════════════════════════════════════════════════════ */
-        .photo-strip {
-            display: flex; height: 240px;
-            overflow: hidden;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .photo-strip-item {
-            flex: 1; overflow: hidden; position: relative;
-            cursor: pointer; background: var(--surface2);
-        }
-        .photo-strip-item + .photo-strip-item { border-left: 1px solid var(--border); }
-        .photo-strip-item img {
-            width: 100%; height: 100%; object-fit: cover;
-            filter: grayscale(25%) brightness(0.72);
-            transition: transform 0.6s ease, filter 0.6s ease;
-        }
-        .photo-strip-item:hover img {
-            transform: scale(1.06);
-            filter: grayscale(0%) brightness(0.88);
-        }
-        .photo-caption {
-            position: absolute; bottom: 0; left: 0; right: 0;
-            background: linear-gradient(to top, rgba(8,8,15,0.94) 0%, transparent 100%);
-            padding: 32px 14px 12px;
-            font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
-            color: var(--text2);
-            transform: translateY(100%);
-            transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
-            pointer-events: none;
-        }
-        .photo-strip-item:hover .photo-caption { transform: translateY(0); }
-
-        /* ══════════════════════════════════════════════════════════
-           LIGHTBOX
-        ══════════════════════════════════════════════════════════ */
-        .lightbox {
-            position: fixed; inset: 0; z-index: 1000;
-            background: rgba(8,8,15,0.97);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.25s ease;
-        }
-        .lightbox.open { opacity: 1; pointer-events: all; }
-        .lightbox-img {
-            max-width: 88vw; max-height: 78vh;
-            object-fit: contain;
-            border: 1px solid var(--border2);
-        }
-        .lightbox-close {
-            position: absolute; top: 24px; right: 32px;
-            background: none; border: 1px solid var(--border2);
-            color: var(--text2); font-size: 16px; font-weight: 400;
-            width: 40px; height: 40px; border-radius: 3px;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            transition: border-color 0.2s, color 0.2s;
-        }
-        .lightbox-close:hover { border-color: var(--red); color: var(--red); }
-        .lightbox-caption {
-            margin-top: 18px; font-size: 10px;
-            letter-spacing: 2.5px; text-transform: uppercase;
-            color: var(--text3);
-        }
-
-        /* ══════════════════════════════════════════════════════════
-           SECTIONS
-        ══════════════════════════════════════════════════════════ */
+        /* ─── SECTIONS ─── */
         .section { padding: 100px 52px; }
         .section-header { text-align: center; margin-bottom: 64px; }
         .section-tag {
@@ -317,8 +213,7 @@
         }
         .section-header h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(32px, 4vw, 48px);
-            font-weight: 700; letter-spacing: -0.5px;
+            font-size: 48px; font-weight: 700; letter-spacing: -0.5px;
             margin-bottom: 16px; color: var(--text);
         }
         .section-header p {
@@ -326,19 +221,10 @@
             max-width: 540px; margin: 0 auto; line-height: 1.8;
         }
 
-        /* Section separator (thin decorative line) */
-        .section-sep {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border2) 20%, var(--border2) 80%, transparent);
-            margin: 0;
-        }
-
-        /* ══════════════════════════════════════════════════════════
-           TOUR CARDS
-        ══════════════════════════════════════════════════════════ */
+        /* ─── TOUR CARDS ─── */
         .tours-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
             gap: 2px;
             max-width: 1160px; margin: 0 auto;
             border: 1px solid var(--border);
@@ -358,45 +244,10 @@
             background: var(--border2);
             transition: background 0.25s;
         }
-        .tour-card.accent-red::before   { background: var(--red); }
-        .tour-card.accent-blue::before  { background: var(--blue); }
+        .tour-card.accent-red::before { background: var(--red); }
+        .tour-card.accent-blue::before { background: var(--blue); }
         .tour-card.accent-green::before { background: var(--green); }
-        .tour-card.accent-gold::before  { background: var(--gold); }
-
-        /* ── Featured card (Welcome to Berlin) ── */
-        .tour-card.featured {
-            grid-column: 1 / -1;
-            flex-direction: row;
-            padding: 0;
-            min-height: 200px;
-        }
-        .featured-body {
-            flex: 1; padding: 36px 32px;
-            display: flex; flex-direction: column;
-            position: relative; overflow: hidden;
-        }
-        .featured-body-bg {
-            position: absolute; bottom: -16px; right: 8px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 128px; font-weight: 700; line-height: 1;
-            color: var(--border); pointer-events: none; user-select: none;
-            z-index: 0;
-        }
-        .featured-body > *:not(.featured-body-bg) { position: relative; z-index: 1; }
-        .featured-body h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(26px, 3vw, 34px);
-            font-weight: 700; letter-spacing: 0.2px;
-            margin-bottom: 14px; color: var(--text); line-height: 1.1;
-        }
-        .featured-body .tour-desc { flex: 1; }
-        .featured-aside {
-            width: 240px; flex-shrink: 0;
-            padding: 36px 28px;
-            border-left: 1px solid var(--border);
-            display: flex; flex-direction: column; justify-content: space-between;
-            gap: 20px;
-        }
+        .tour-card.accent-gold::before { background: var(--gold); }
 
         .type-badge {
             display: inline-block;
@@ -406,10 +257,10 @@
             border-radius: 2px; margin-bottom: 18px;
             border: 1px solid currentColor;
         }
-        .badge-free { color: var(--green); border-color: rgba(34,197,94,0.4); }
-        .badge-paid { color: var(--blue);  border-color: rgba(80,88,240,0.4); }
-        .badge-exp  { color: var(--red);   border-color: rgba(224,64,48,0.4); }
-        .badge-full { color: var(--gold);  border-color: rgba(201,160,80,0.4); }
+        .badge-free  { color: var(--green); border-color: rgba(34,197,94,0.4); }
+        .badge-paid  { color: var(--blue);  border-color: rgba(80,88,240,0.4);  }
+        .badge-exp   { color: var(--red);   border-color: rgba(224,64,48,0.4);  }
+        .badge-full  { color: var(--gold);  border-color: rgba(201,160,80,0.4); }
 
         .tour-card h3 {
             font-family: 'Oswald', sans-serif;
@@ -452,23 +303,10 @@
             padding: 12px 20px; border-radius: 3px;
             font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
             text-decoration: none; transition: filter 0.2s;
-            cursor: pointer;
         }
         .btn-book:hover { filter: brightness(1.1); }
 
-        /* Card stagger animation */
-        @keyframes cardReveal {
-            from { opacity: 0; transform: translateY(18px); }
-            to   { opacity: 1; transform: none; }
-        }
-        .tours-grid.is-staggered .tour-card {
-            animation: cardReveal 0.45s cubic-bezier(0.22,1,0.36,1) both;
-            animation-delay: calc(var(--card-i, 0) * 55ms);
-        }
-
-        /* ══════════════════════════════════════════════════════════
-           ITINERARY BUILDER
-        ══════════════════════════════════════════════════════════ */
+        /* ─── BUILDER SECTION ─── */
         .builder-bg {
             background:
                 radial-gradient(ellipse 60% 50% at 0% 50%, rgba(80,88,240,0.06) 0%, transparent 60%),
@@ -476,12 +314,14 @@
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
+
         .builder-layout {
             display: grid;
             grid-template-columns: 1fr 360px;
             gap: 28px;
             max-width: 1160px; margin: 0 auto;
         }
+
         .builder-panel {
             background: var(--bg);
             border: 1px solid var(--border);
@@ -494,6 +334,7 @@
             color: var(--gold); margin-bottom: 12px;
         }
         .builder-step { margin-bottom: 28px; }
+
         .builder-select {
             width: 100%; padding: 12px 16px;
             background: var(--surface2); border: 1px solid var(--border2);
@@ -502,13 +343,15 @@
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237A7AA0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat; background-position: right 14px center;
-            background-size: 10px; padding-right: 36px;
+            background-size: 10px;
+            padding-right: 36px;
             cursor: pointer; transition: border-color 0.2s;
         }
         .builder-select:focus { outline: none; border-color: var(--blue); }
         .builder-select option { background: var(--surface2); }
 
         /* Calendar */
+        .cal-wrapper { }
         .cal-header {
             display: flex; align-items: center; justify-content: space-between;
             margin-bottom: 14px;
@@ -601,11 +444,15 @@
 
         /* ─── ITINERARY PANEL ─── */
         .itinerary-panel {
-            position: sticky; top: 74px;
+            position: sticky; top: 84px;
             background: var(--bg); border: 1px solid var(--border);
             border-radius: 2px; padding: 24px; height: fit-content;
         }
-        .panel-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+
+        /* Tabs */
+        .panel-tabs {
+            display: flex; border-bottom: 1px solid var(--border); margin-bottom: 20px;
+        }
         .panel-tab {
             flex: 1; text-align: center; padding: 10px;
             font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600;
@@ -615,6 +462,7 @@
         }
         .panel-tab.active { color: var(--text); border-bottom-color: var(--red); }
         .panel-tab:hover { color: var(--text); }
+
         .tab-content { display: none; }
         .tab-content.active { display: block; }
 
@@ -639,7 +487,9 @@
             padding: 12px 0; border-bottom: 1px solid var(--border);
         }
         .itinerary-item:last-child { border-bottom: none; }
-        .item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+        .item-dot {
+            width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+        }
         .item-info { flex: 1; min-width: 0; }
         .item-name {
             font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700;
@@ -701,6 +551,7 @@
             background: var(--red-glow); padding: 4px 12px; border-radius: 2px;
             font-weight: 600; letter-spacing: 0.5px;
         }
+
         .gcal-days-header {
             display: grid; grid-template-columns: 44px repeat(7, 1fr);
             border-bottom: 1px solid var(--border);
@@ -725,11 +576,13 @@
             display: flex; align-items: center; justify-content: center;
             margin: 2px auto 0;
         }
+
         .gcal-body-wrapper { overflow-y: auto; max-height: 480px; }
         .gcal-body {
             display: grid; grid-template-columns: 44px repeat(7, 1fr);
             position: relative;
         }
+        .gcal-time-col { }
         .gcal-time-cell {
             height: 52px; display: flex; align-items: flex-start;
             justify-content: flex-end; padding-right: 8px; padding-top: 2px;
@@ -739,8 +592,16 @@
             border-left: 1px solid var(--border);
             position: relative; min-height: 52px;
         }
-        .gcal-hour-line { position: absolute; left: 0; right: 0; border-top: 1px solid var(--border); }
-        .gcal-half-line { position: absolute; left: 0; right: 0; border-top: 1px dashed var(--surface3); }
+        .gcal-hour-line {
+            position: absolute; left: 0; right: 0;
+            border-top: 1px solid var(--border);
+        }
+        .gcal-half-line {
+            position: absolute; left: 0; right: 0;
+            border-top: 1px dashed var(--surface3);
+        }
+
+        /* Event block */
         .gcal-event {
             position: absolute; left: 2px; right: 2px;
             border-radius: 3px; padding: 4px 6px;
@@ -751,25 +612,18 @@
         .gcal-event:hover { filter: brightness(1.15); }
         .gcal-event-name { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .gcal-event-time { font-size: 10px; opacity: 0.85; }
-        .gcal-event.conflict-event   { left: 50%; border-left: none; border-radius: 0 3px 3px 0; }
+        .gcal-event.conflict-event { left: 50%; border-left: none; border-radius: 0 3px 3px 0; }
         .gcal-event.conflict-event-1 { right: 50%; border-radius: 3px 0 0 3px; }
-        .ev-green { background: rgba(34,197,94,0.2);  border-left: 3px solid var(--green); color: #6EF0A0; }
-        .ev-blue  { background: rgba(80,88,240,0.2);  border-left: 3px solid var(--blue);  color: #9099F8; }
-        .ev-red   { background: rgba(224,64,48,0.2);  border-left: 3px solid var(--red);   color: #F09088; }
-        .ev-gold  { background: rgba(201,160,80,0.2); border-left: 3px solid var(--gold);  color: #DEC07A; }
 
-        /* ══════════════════════════════════════════════════════════
-           HOW IT WORKS
-        ══════════════════════════════════════════════════════════ */
-        .how-section {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-        .steps-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
-            gap: 1px; max-width: 960px; margin: 0 auto;
-        }
+        /* Event colors */
+        .ev-green { background: rgba(34,197,94,0.2); border-left: 3px solid var(--green); color: #6EF0A0; }
+        .ev-blue  { background: rgba(80,88,240,0.2); border-left: 3px solid var(--blue);  color: #9099F8; }
+        .ev-red   { background: rgba(224,64,48,0.2); border-left: 3px solid var(--red);   color: #F09088; }
+        .ev-gold  { background: rgba(201,160,80,0.2); border-left: 3px solid var(--gold); color: #DEC07A; }
+
+        /* ─── HOW IT WORKS ─── */
+        .how-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1px; max-width: 960px; margin: 0 auto; }
         .step-card {
             background: var(--bg); padding: 36px 32px;
             border: 1px solid var(--border);
@@ -778,15 +632,56 @@
             font-family: 'Oswald', sans-serif; font-size: 48px; font-weight: 700;
             color: var(--border2); line-height: 1; margin-bottom: 16px;
         }
-        .step-card h4 {
-            font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700;
-            margin-bottom: 12px; letter-spacing: 0.3px;
-        }
+        .step-card h4 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.3px; }
         .step-card p { font-size: 13px; color: var(--text2); line-height: 1.8; }
 
-        /* ══════════════════════════════════════════════════════════
-           REVIEWS MARQUEE
-        ══════════════════════════════════════════════════════════ */
+        /* ─── BOOK SECTION ─── */
+        .book-section {
+            padding: 100px 52px; text-align: center;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 0%, rgba(224,64,48,0.08) 0%, transparent 60%),
+                var(--bg);
+            border-top: 1px solid var(--border);
+        }
+        .book-section .section-tag { color: var(--red); }
+        .book-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 52px; font-weight: 700; letter-spacing: -0.5px;
+            margin-bottom: 20px; line-height: 1.1;
+        }
+        .book-section h2 span { color: var(--red); }
+        .book-section p { font-size: 16px; color: var(--text2); max-width: 540px; margin: 0 auto 48px; line-height: 1.8; }
+        .book-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--surface); border-top: 1px solid var(--border);
+            padding: 52px 52px 36px; text-align: center;
+        }
+        .footer-brand {
+            font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase; color: var(--text);
+            margin-bottom: 28px;
+        }
+        .footer-brand span { color: var(--red); }
+        .footer-links {
+            list-style: none; display: flex; justify-content: center;
+            gap: 32px; flex-wrap: wrap; margin-bottom: 28px;
+        }
+        .footer-links a { font-size: 12px; color: var(--text3); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-social { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; }
+        .footer-social a {
+            width: 36px; height: 36px; border-radius: 3px;
+            background: var(--surface2); border: 1px solid var(--border2);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text2); text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .footer-social a:hover { border-color: var(--red); color: var(--red); }
+        .footer-copy { font-size: 11px; color: var(--text3); letter-spacing: 1px; }
+
+        /* ─── REVIEWS MARQUEE ─── */
         .reviews-section {
             padding: 80px 0 84px;
             background: var(--surface);
@@ -794,11 +689,14 @@
             border-bottom: 1px solid var(--border);
             overflow: hidden;
         }
-        .reviews-header { text-align: center; padding: 0 52px 48px; }
+        .reviews-header {
+            text-align: center;
+            padding: 0 52px 48px;
+        }
         .reviews-header h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(28px, 3.5vw, 36px);
-            font-weight: 700; letter-spacing: -0.3px; margin-top: 10px;
+            font-size: 36px; font-weight: 700;
+            letter-spacing: -0.3px; margin-top: 10px;
         }
         .reviews-marquee-wrap {
             overflow: hidden;
@@ -806,7 +704,8 @@
             mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
         }
         .reviews-marquee-track {
-            display: flex; gap: 18px;
+            display: flex;
+            gap: 18px;
             width: max-content;
             animation: reviewsScroll 60s linear infinite;
         }
@@ -816,27 +715,14 @@
             100% { transform: translateX(-50%); }
         }
         .review-card {
-            width: 320px; flex-shrink: 0;
+            width: 310px; flex-shrink: 0;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 4px;
             padding: 26px 24px;
             transition: border-color 0.25s;
-            position: relative; overflow: hidden;
         }
         .review-card:hover { border-color: var(--gold); }
-
-        /* Large decorative quote mark */
-        .review-card::before {
-            content: '\201C';
-            font-family: 'Oswald', sans-serif;
-            font-size: 88px; font-weight: 700; line-height: 1;
-            color: var(--border2);
-            position: absolute; top: 4px; left: 14px;
-            z-index: 0; pointer-events: none; user-select: none;
-        }
-
-        .review-stars, .review-text, .review-author { position: relative; z-index: 1; }
         .review-stars {
             color: var(--gold); font-size: 13px;
             letter-spacing: 3px; margin-bottom: 14px;
@@ -867,166 +753,108 @@
             white-space: nowrap;
         }
 
-        /* ══════════════════════════════════════════════════════════
-           BOOK SECTION
-        ══════════════════════════════════════════════════════════ */
-        .book-section {
-            padding: 100px 52px; text-align: center;
-            background:
-                radial-gradient(ellipse 70% 60% at 50% 0%, rgba(224,64,48,0.08) 0%, transparent 60%),
-                var(--bg);
-            border-top: 1px solid var(--border);
-        }
-        .book-section .section-tag { color: var(--red); }
-        .book-section h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(36px, 4.5vw, 52px);
-            font-weight: 700; letter-spacing: -0.5px;
-            margin-bottom: 20px; line-height: 1.1;
-        }
-        .book-section h2 span { color: var(--red); }
-        .book-section p {
-            font-size: 16px; color: var(--text2);
-            max-width: 540px; margin: 0 auto 48px; line-height: 1.8;
-        }
-        .book-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-
-        /* ══════════════════════════════════════════════════════════
-           FOOTER
-        ══════════════════════════════════════════════════════════ */
-        footer {
-            background: var(--surface); border-top: 1px solid var(--border);
-            padding: 52px 52px 36px; text-align: center;
-        }
-        .footer-brand {
-            font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700;
-            letter-spacing: 3px; text-transform: uppercase; color: var(--text);
-            margin-bottom: 28px;
-        }
-        .footer-brand span { color: var(--red); }
-        .footer-links {
-            list-style: none; display: flex; justify-content: center;
-            gap: 32px; flex-wrap: wrap; margin-bottom: 28px;
-        }
-        .footer-links a {
-            font-size: 12px; color: var(--text3); text-decoration: none;
-            letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--text); }
-        .footer-social { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; }
-        .footer-social a {
-            width: 36px; height: 36px; border-radius: 3px;
-            background: var(--surface2); border: 1px solid var(--border2);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--text2); text-decoration: none;
-            transition: border-color 0.2s, color 0.2s;
-        }
-        .footer-social a:hover { border-color: var(--red); color: var(--red); }
-        .footer-copy { font-size: 11px; color: var(--text3); letter-spacing: 1px; }
-
-        /* ══════════════════════════════════════════════════════════
-           SCROLL FADE-UP
-        ══════════════════════════════════════════════════════════ */
-        .js-ready .fade-up {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
-                        transform 0.6s cubic-bezier(0.22,1,0.36,1);
-        }
-        .js-ready .fade-up.is-visible {
-            opacity: 1;
-            transform: none;
-        }
-        /* Stagger delays for step cards */
-        .js-ready .step-card:nth-child(1).fade-up { transition-delay: 0ms; }
-        .js-ready .step-card:nth-child(2).fade-up { transition-delay: 80ms; }
-        .js-ready .step-card:nth-child(3).fade-up { transition-delay: 160ms; }
-
-        /* ══════════════════════════════════════════════════════════
-           RESPONSIVE
-        ══════════════════════════════════════════════════════════ */
-        @media (max-width: 1024px) {
-            .tour-card.featured { grid-column: span 1; flex-direction: column; }
-            .featured-aside {
-                width: 100%; border-left: none;
-                border-top: 1px solid var(--border);
-            }
-            .featured-body-bg { font-size: 96px; }
-        }
+        /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
             .builder-layout { grid-template-columns: 1fr; }
             .itinerary-panel { position: static; }
         }
         @media (max-width: 768px) {
             nav { padding: 0 20px; }
-            .nav-hamburger { display: flex; }
-            .nav-links {
-                display: none;
-                position: fixed; top: 58px; left: 0; right: 0;
-                background: rgba(8,8,15,0.97);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border-bottom: 1px solid var(--border);
-                flex-direction: column; gap: 0;
-                padding: 4px 0 16px; z-index: 99;
-            }
-            .nav-links.open { display: flex; }
-            .nav-links li { width: 100%; }
-            .nav-links a {
-                display: block; padding: 15px 24px;
-                border-bottom: 1px solid var(--border);
-            }
-            .btn-wa-nav { padding: 8px 14px; font-size: 12px; }
+            .nav-links { display: none; }
             .hero { min-height: auto; padding: 70px 24px; }
-            .hero h1 { font-size: clamp(38px, 10vw, 60px); }
+            .hero h1 { font-size: 44px; }
             .section { padding: 70px 24px; }
-            .stats-bar { gap: 36px; padding: 24px; }
+            .stats-bar { gap: 36px; padding: 24px 24px; }
             .book-section { padding: 70px 24px; }
-            .photo-strip { height: 160px; }
             footer { padding: 44px 24px 28px; }
-            .reviews-header { padding: 0 24px 40px; }
-            .tour-card.featured { grid-column: span 1; flex-direction: column; }
-            .featured-aside { width: 100%; border-left: none; border-top: 1px solid var(--border); }
-        }
-        @media (max-width: 480px) {
-            .photo-strip { height: 120px; }
-            .photo-caption { display: none; }
         }
 
-        /* ══════════════════════════════════════════════════════════
-           REDUCED MOTION
-        ══════════════════════════════════════════════════════════ */
-        @media (prefers-reduced-motion: reduce) {
-            .hero-bg-photo { animation: none !important; }
-            .reveal-line,
-            .hero-eyebrow,
-            .hero-sub,
-            .hero-ctas { opacity: 1 !important; animation: none !important; }
-            .reviews-marquee-track { animation-play-state: paused !important; }
-            .js-ready .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
-            .tours-grid.is-staggered .tour-card { animation: none !important; opacity: 1 !important; }
+        /* ─── CARD PHOTO ─── */
+        .card-photo {
+            position: relative;
+            height: 190px;
+            margin: -32px -28px 22px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .card-photo img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.35s, transform 0.45s;
+            display: block;
+        }
+        .card-photo:hover img {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+        .card-photo-hint {
+            position: absolute; bottom: 10px; right: 12px;
+            background: rgba(0,0,0,0.65);
+            color: rgba(255,255,255,0.9);
+            font-size: 10px; letter-spacing: 2px;
+            padding: 5px 11px; border-radius: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .card-photo:hover .card-photo-hint { opacity: 1; }
+
+        /* ─── LIGHTBOX ─── */
+        .lightbox {
+            display: none;
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.94);
+            align-items: center; justify-content: center;
+        }
+        .lightbox.active { display: flex; }
+        .lb-img-wrap { max-width: 88vw; max-height: 88vh; }
+        .lb-img-wrap img {
+            max-width: 100%; max-height: 88vh;
+            object-fit: contain; border-radius: 2px;
+            display: block;
+        }
+        .lb-close {
+            position: absolute; top: 20px; right: 28px;
+            background: none; border: none; color: #fff;
+            font-size: 30px; cursor: pointer; opacity: 0.6;
+            line-height: 1; transition: opacity 0.2s;
+        }
+        .lb-close:hover { opacity: 1; }
+        .lb-prev, .lb-next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+            color: #fff; font-size: 32px; width: 52px; height: 72px;
+            cursor: pointer; border-radius: 3px; transition: background 0.2s;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.18); }
+        .lb-prev { left: 16px; }
+        .lb-next { right: 16px; }
+        .lb-counter {
+            position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+            color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 3px;
         }
 
+        /* ─── EXPERIENCIAS DOMINGO ─── */
+        .exp-domingo-tag {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(201,160,80,0.08);
+            border: 1px solid rgba(201,160,80,0.3);
+            color: var(--gold);
+            font-size: 11px; font-weight: 600; letter-spacing: 3px;
+            text-transform: uppercase; padding: 7px 18px; border-radius: 2px;
+            margin-bottom: 14px;
+        }
     </style>
 </head>
 <body>
 
-<!-- ═══ LIGHTBOX ═════════════════════════════════════════════════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar imagen">✕</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
-</div>
-
-<!-- ═══ NAV ══════════════════════════════════════════════════════════ -->
+<!-- ═══ NAV ═══════════════════════════════════════════════════════ -->
 <nav>
     <a href="#" class="nav-brand">Berlin <span>Joven</span>©</a>
-
-    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
         <li><a href="#tours">Tours</a></li>
         <li><a href="#itinerario">Planifica</a></li>
         <li><a href="#como-funciona">Reservar</a></li>
@@ -1035,197 +863,239 @@
         <li><a href="/blog">Blog</a></li>
         <li><a href="#contacto">Contacto</a></li>
     </ul>
-
-    <a href="https://wa.me/4915567304172" class="btn-wa-nav" target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a href="https://wa.me/TUNUMERO" class="btn-wa-nav" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Reservar
     </a>
 </nav>
 
-
-<!-- ═══ HERO ════════════════════════════════════════════════════════ -->
+<!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
 <section class="hero">
     <div class="hero-bg-photo"></div>
     <div class="hero-content">
         <div class="hero-eyebrow">
             <div class="eyebrow-dot"></div>
-            Berlín Joven · Carlos Maza Tours
+            Tours en Berlín · 100% en Español
         </div>
-        <h1>
-            <span class="reveal-line">Berlín.</span>
-            <span class="reveal-line">Sin filtros.</span>
-            <span class="reveal-line"><em>En Español.</em></span>
-        </h1>
-        <p class="hero-sub">Tours guiados por Berlín. Historia real, anécdotas que no están en los libros, y la ciudad que cambió el mundo — contada por alguien que la vive.</p>
+        <h1>Berlín.<br>Sin filtros.<br><em>En español.</em></h1>
+        <p class="hero-sub">Tours guiados para hispanohablantes. Historia real, anécdotas que no están en los libros, y la ciudad que cambió el mundo — contada por alguien que la vive.</p>
         <div class="hero-ctas">
             <a href="#tours" class="btn-primary">Ver los tours</a>
-            <a href="https://wa.me/4915567304172" class="btn-ghost" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO" class="btn-ghost" target="_blank">Hablar por WhatsApp</a>
         </div>
     </div>
 </section>
 
-<!-- ═══ STATS ════════════════════════════════════════════════════════ -->
-<div class="stats-bar fade-up">
-    <div class="stat">
-        <div class="stat-n" data-count="8">8</div>
-        <div class="stat-l">Tours disponibles</div>
-    </div>
-    <div class="stat">
-        <div class="stat-n" data-count="100" data-suffix="%">100%</div>
-        <div class="stat-l">En español</div>
-    </div>
-    <div class="stat">
-        <div class="stat-n">Berlín</div>
-        <div class="stat-l">Toda la ciudad</div>
-    </div>
+<!-- ═══ STATS ═══════════════════════════════════════════════════════ -->
+<div class="stats-bar">
+    <div class="stat"><div class="stat-n">8</div><div class="stat-l">Tours disponibles</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">En español</div></div>
+    <div class="stat"><div class="stat-n">★ 5.0</div><div class="stat-l">Valoración media</div></div>
+    <div class="stat"><div class="stat-n">Berlín</div><div class="stat-l">Toda la ciudad</div></div>
 </div>
 
-<!-- ═══ PHOTO STRIP ═════════════════════════════════════════════════ -->
+<!-- ═══ PHOTO STRIP ══════════════════════════════════════════════════ -->
 <div class="photo-strip">
-    <div class="photo-strip-item" onclick="openLightbox('img/foto1.jpg','Berlín · La ciudad')">
-        <img src="img/foto1.jpg" alt="Berlín" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">Berlín · La ciudad</div>
-    </div>
-    <div class="photo-strip-item" onclick="openLightbox('img/foto2.jpg','Historia viva')">
-        <img src="img/foto2.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">Historia viva</div>
-    </div>
-    <div class="photo-strip-item" onclick="openLightbox('img/foto3.jpg','La ciudad que cambió el mundo')">
-        <img src="img/foto3.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">La ciudad que cambió el mundo</div>
-    </div>
-    <div class="photo-strip-item" onclick="openLightbox('img/foto4.jpg','Cada rincón, una historia')">
-        <img src="img/foto4.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">Cada rincón, una historia</div>
-    </div>
-    <div class="photo-strip-item" onclick="openLightbox('img/foto5.jpg','Cultura alternativa')">
-        <img src="img/foto5.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">Cultura alternativa</div>
-    </div>
-    <div class="photo-strip-item" onclick="openLightbox('img/foto6.jpg','Momentos únicos')">
-        <img src="img/foto6.jpg" alt="" onerror="this.style.visibility='hidden'">
-        <div class="photo-caption">Momentos únicos</div>
-    </div>
+    <div class="photo-strip-item"><img src="img/foto1.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
+    <div class="photo-strip-item"><img src="img/foto2.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
+    <div class="photo-strip-item"><img src="img/foto3.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
+    <div class="photo-strip-item"><img src="img/foto4.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
+    <div class="photo-strip-item"><img src="img/foto5.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
+    <div class="photo-strip-item"><img src="img/foto6.jpg" alt="" onerror="this.style.visibility='hidden'"></div>
 </div>
-
-<div class="section-sep"></div>
 
 <!-- ═══ TOURS ═══════════════════════════════════════════════════════ -->
 <section class="section" id="tours">
-    <div class="section-header fade-up">
+    <div class="section-header">
         <div class="section-tag">Experiencias</div>
         <h2>Elige tu tour</h2>
         <p>Desde free tours para recién llegados hasta experiencias de día completo. Cada tour, una historia distinta.</p>
     </div>
-
     <div class="tours-grid">
 
-        <!-- ── FEATURED: Welcome to Berlin (horizontal editorial card) ── -->
-        <div class="tour-card accent-green featured">
-            <div class="featured-body">
-                <div class="type-badge badge-free">Free Tour</div>
-                <h3>Welcome to Berlin</h3>
-                <p class="tour-desc">Este tour es esa visita al Berlín que te prometieron; muchos eventos que marcaron el siglo XX y el presente pasaron por estas calles. Hablaremos de los 3 Imperios y veremos un trozo del muro de Berlín, para luego acabar frente a la Isla de los Museos...</p>
-                <div class="featured-body-bg" aria-hidden="true">01</div>
+        <div class="tour-card accent-green">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/fwt1.webp','img/tours-abril-2025/fwt2.webp'],0)">
+                <img src="img/tours-abril-2025/fwt1.webp" alt="Welcome to Berlin" loading="lazy" style="object-position: top;">
+                <div class="card-photo-hint">Ver fotos</div>
             </div>
-            <div class="featured-aside">
-                <div class="tour-schedule">🗓 Lunes – Domingo &nbsp;·&nbsp; 09:00 / 12:00 / 13:00 / 16:00 &nbsp;·&nbsp; 3h 30min</div>
-                <div class="price-block"><div class="price-free">Entrada libre · Propina voluntaria</div></div>
-                <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Welcome%20to%20Berlin" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
-            </div>
+            <div class="type-badge badge-free">Free Tour</div>
+            <h3>Welcome to Berlin</h3>
+            <p class="tour-desc">El punto de partida. Puerta de Brandenburgo, Checkpoint Charlie, el Memorial del Holocausto y los rincones que definen esta ciudad única.</p>
+            <div class="tour-schedule">🗓 Lunes – Domingo &nbsp;·&nbsp; 09:00 / 12:00 / 13:00 / 16:00 &nbsp;·&nbsp; 3h 30min</div>
+            <div class="price-block"><div class="price-free">Entrada libre · Propina voluntaria</div></div>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Welcome%20to%20Berlin" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
-        <!-- ── Regular cards ── -->
         <div class="tour-card accent-green">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/muro1.webp'],0)">
+                <img src="img/tours-abril-2025/muro1.webp" alt="Muro de Berlín" loading="lazy" style="object-position: center 20%;">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-free">Free Tour</div>
             <h3>Muro de Berlín y Guerra Fría</h3>
-            <p class="tour-desc">Tres horitas, 30 años de historia(s) que todavía marcan a esta ciudad. Hace nada fue el 36 aniversario de la caída del muro, y bueno, está muy bueno este tour...</p>
+            <p class="tour-desc">La división, el espionaje, las fugas y la caída del Muro. Uno de los capítulos más intensos del siglo XX, narrado en los lugares donde ocurrió.</p>
             <div class="tour-schedule">🗓 Martes – Domingo &nbsp;·&nbsp; 15:00 &nbsp;·&nbsp; 3h 30min</div>
             <div class="price-block"><div class="price-free">Entrada libre · Propina voluntaria</div></div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Muro%20de%20Berlín%20y%20Guerra%20Fría" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Muro%20de%20Berlín%20y%20Guerra%20Fría" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-blue">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/alt1.webp','img/tours-abril-2025/alt2.webp','img/tours-abril-2025/alt4.webp'],0)">
+                <img src="img/tours-abril-2025/alt1.webp" alt="Berlín Alternativo" loading="lazy" style="object-position: center 65%;">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-paid">Tour Premium</div>
             <h3>Berlín Alternativo</h3>
-            <p class="tour-desc">Visita los barrios bohemios de Berlín a través de los movimientos sociales que marcaron el nuevo milenio: la caída del muro, el "abandono" y la ocupación de la Berlín oriental, la fiesta, el grafitti, la cerveza...</p>
+            <p class="tour-desc">Arte urbano, squats históricos, la escena underground que hizo famosa a esta ciudad. El Berlín que no sale en ninguna guía convencional.</p>
             <div class="tour-schedule">🗓 Lunes – Domingo &nbsp;·&nbsp; 15:00 (y 10:00 Lun/Sáb/Dom) &nbsp;·&nbsp; 3h 30min</div>
             <div class="price-block">
                 <div class="price-main">20 €</div>
                 <div class="price-row"><span class="price-code">18 € con código</span><span class="badge-disc">–10%</span></div>
             </div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Berlín%20Alternativo" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Berlín%20Alternativo" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-blue">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/ns1.webp','img/tours-abril-2025/ns2.webp'],0)">
+                <img src="img/tours-abril-2025/ns1.webp" alt="Nazismo en Berlín" loading="lazy" style="object-position: center 78%;">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-paid">Tour Premium</div>
             <h3>Nazismo en Berlín</h3>
-            <p class="tour-desc">El tour que más me cuesta hacer, y el que más necesito hacer. Recorremos los escenarios del Tercer Reich: desde la Topografía del Terror hasta el Memorial del Holocausto, pasando por lugares que hoy ya no parece que fueron el centro del poder más oscuro del siglo XX...</p>
+            <p class="tour-desc">Un recorrido sobrio y riguroso por los lugares que marcaron uno de los capítulos más oscuros de la historia. Imprescindible para entender la Alemania de hoy.</p>
             <div class="tour-schedule">🗓 Viernes y Sábado &nbsp;·&nbsp; 10:00 – 13:30</div>
             <div class="price-block">
                 <div class="price-main">20 €</div>
                 <div class="price-row"><span class="price-code">18 € con código</span><span class="badge-disc">–10%</span></div>
             </div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Nazismo%20en%20Berlín" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Nazismo%20en%20Berlín" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-blue">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/sh1.webp'],0)">
+                <img src="img/tours-abril-2025/sh1.webp" alt="Sachsenhausen" loading="lazy">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-paid">Tour Premium</div>
             <h3>Sachsenhausen</h3>
-            <p class="tour-desc">Salimos de Berlín para visitar uno de los campos de concentración más importantes de la historia nazi. Hay viajes que no son fáciles, y este es uno de ellos. Pero es de los más necesarios. Te prometo que sales diferente...</p>
+            <p class="tour-desc">Visita guiada en español al campo de concentración más cercano a Berlín. Una experiencia que transforma la perspectiva y que nunca se olvida.</p>
             <div class="tour-schedule">🗓 Lunes – Domingo &nbsp;·&nbsp; 09:00 – 14:30</div>
             <div class="price-block">
                 <div class="price-main">30 €</div>
                 <div class="price-row"><span class="price-code">27 € con código</span><span class="badge-disc">–10%</span></div>
             </div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Sachsenhausen" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Sachsenhausen" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-blue">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/pt1.webp','img/tours-abril-2025/pt2.webp'],0)">
+                <img src="img/tours-abril-2025/pt1.webp" alt="Potsdam" loading="lazy">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-paid">Tour Premium</div>
             <h3>Potsdam</h3>
-            <p class="tour-desc">¿Sabías que Berlín no siempre fue la capital alemana? Nos vamos a Potsdam, la ciudad de los Kaisers, los palacios y los jardines que no te esperabas encontrar tan cerca. El día de relax que necesitas entre tanto peso histórico...</p>
+            <p class="tour-desc">Palacios reales, jardines espectaculares y la Conferencia que dividió el mundo tras la Segunda Guerra Mundial. A 30 minutos de Berlín, a siglos de distancia.</p>
             <div class="tour-schedule">🗓 Lunes / Jueves / Sábado &nbsp;·&nbsp; 09:00 – 14:40</div>
             <div class="price-block">
                 <div class="price-main">30 €</div>
                 <div class="price-row"><span class="price-code">27 € con código</span><span class="badge-disc">–10%</span></div>
             </div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Potsdam" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Potsdam" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-red">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/bt1.webp','img/tours-abril-2025/bt2.webp'],0)">
+                <img src="img/tours-abril-2025/bt1.webp" alt="Tour de la Cerveza" loading="lazy">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-exp">Experiencia</div>
             <h3>Tour de la Cerveza 🍺</h3>
             <p class="tour-desc">Los mejores locales de Berlín, las variedades más interesantes y la historia detrás de cada pinta. La ciudad tiene una cultura cervecera única. ¡Prost!</p>
             <div class="tour-schedule">🗓 Viernes &nbsp;·&nbsp; 17:00 – 20:00 · Incluye degustaciones</div>
             <div class="price-block"><div class="price-main">40 €</div></div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Tour%20de%20la%20Cerveza" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Tour%20de%20la%20Cerveza" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
         <div class="tour-card accent-gold">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/1d1.webp','img/tours-abril-2025/1d2.webp','img/tours-abril-2025/1d3.webp'],0)">
+                <img src="img/tours-abril-2025/1d1.webp" alt="Berlín al Completo" loading="lazy" style="object-position: center 25%;">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
             <div class="type-badge badge-full">Día Completo</div>
             <h3>Berlín al Completo</h3>
-            <p class="tour-desc">Te recomiendo este tour si tienes pocos días y quieres aprovecharlo al máximo. Hacemos una ruta por todo lo que se considera "imprescindible" en el centro de Berlín, para acabar en la East Side Gallery...</p>
+            <p class="tour-desc">Para los que quieren verlo todo en un solo día. El recorrido más completo por la historia, la cultura y los rincones más especiales de la capital alemana.</p>
             <div class="tour-schedule">🗓 Sábados &nbsp;·&nbsp; 09:00 – 15:00 · 6 horas</div>
             <div class="price-block"><div class="price-main">30 €</div></div>
-            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Berlín%20al%20Completo" class="btn-book" target="_blank" rel="noopener">📲 Reservar por WhatsApp</a>
+            <a href="https://wa.me/TUNUMERO?text=Hola!%20Quiero%20reservar:%20Berlín%20al%20Completo" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
         </div>
 
     </div>
 </section>
 
-<!-- ═══ ITINERARY BUILDER ═════════════════════════════════════════ -->
+<!-- ═══ EXPERIENCIAS DOMINGO ════════════════════════════════════════ -->
+<section class="section" id="experiencias" style="padding-top: 0;">
+    <div class="section-header">
+        <div class="exp-domingo-tag">☀️ Solo los domingos</div>
+        <h2>Experiencias de domingo</h2>
+        <p>Planes más tranquilos para descubrir el Berlín que los turistas no ven. Solo disponibles los domingos.</p>
+    </div>
+    <div class="tours-grid">
+
+        <div class="tour-card accent-gold">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/tpark2.webp','img/tours-abril-2025/tpark3.webp','img/tours-abril-2025/tpark4.webp'],0)">
+                <img src="img/tours-abril-2025/tpark2.webp" alt="Treptower Park" loading="lazy">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
+            <div class="type-badge badge-full">Experiencia</div>
+            <h3>Treptower Park</h3>
+            <p class="tour-desc">El monumento soviético más imponente de Europa occidental, rodeado de uno de los parques más bonitos de Berlín. Historia de la URSS, el desfile de la victoria y la Berlín que quedó al otro lado del muro.</p>
+            <div class="tour-schedule">🗓 Solo domingos &nbsp;·&nbsp; Horario a consultar &nbsp;·&nbsp; ~2h 30min</div>
+            <div class="price-block"><div class="price-main">A consultar</div></div>
+            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Treptower%20Park%20(domingo)" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
+        </div>
+
+        <div class="tour-card accent-gold">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/tiergarten1.webp','img/tours-abril-2025/tiergarten2.webp'],0)">
+                <img src="img/tours-abril-2025/tiergarten1.webp" alt="Tiergarten" loading="lazy">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
+            <div class="type-badge badge-full">Experiencia</div>
+            <h3>Tiergarten</h3>
+            <p class="tour-desc">El gran pulmón verde de Berlín esconde más historia de la que parece. Del bosque de caza de los reyes prusianos a los bombardeos de la Segunda Guerra Mundial y la reconstrucción. Un paseo que mezcla naturaleza e historia sin salir del centro.</p>
+            <div class="tour-schedule">🗓 Solo domingos &nbsp;·&nbsp; Horario a consultar &nbsp;·&nbsp; ~2h 30min</div>
+            <div class="price-block"><div class="price-main">A consultar</div></div>
+            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Tiergarten%20(domingo)" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
+        </div>
+
+        <div class="tour-card accent-gold">
+            <div class="card-photo" onclick="openLightbox(['img/tours-abril-2025/kayak1.webp','img/tours-abril-2025/kayak3.webp','img/tours-abril-2025/kayak4.webp'],0)">
+                <img src="img/tours-abril-2025/kayak1.webp" alt="Kayak por Berlín" loading="lazy" style="object-position: center 80%;">
+                <div class="card-photo-hint">Ver fotos</div>
+            </div>
+            <div class="type-badge badge-full">Experiencia</div>
+            <h3>Kayak por Berlín 🛶</h3>
+            <p class="tour-desc">Berlín tiene más canales que Ámsterdam. Recórrelos en kayak mientras descubres la ciudad desde el agua: puentes históricos, barrios que cambiaron de país de un día para otro y rincones que solo se ven desde el río.</p>
+            <div class="tour-schedule">🗓 Solo domingos &nbsp;·&nbsp; Horario a consultar &nbsp;·&nbsp; ~3h</div>
+            <div class="price-block"><div class="price-main">A consultar</div></div>
+            <a href="https://wa.me/4915567304172?text=Hola!%20Quiero%20reservar:%20Kayak%20por%20Berlín%20(domingo)" class="btn-book" target="_blank">📲 Reservar por WhatsApp</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ ITINERARY BUILDER ══════════════════════════════════════════ -->
 <section class="section builder-bg" id="itinerario">
-    <div class="section-header fade-up">
+    <div class="section-header">
         <div class="section-tag">Planificador</div>
         <h2>Arma tu itinerario</h2>
-        <p>Elige tours, días y horarios. El calendario te muestra visualmente el espacio que ocupa cada tour.</p>
+        <p>Elige tours, días y horarios. El calendario te muestra visualmente el espacio que ocupa cada tour para que nunca haya solapamientos.</p>
     </div>
 
     <div class="builder-layout">
 
         <!-- LEFT: Builder -->
         <div class="builder-panel">
+
             <div class="builder-step">
                 <div class="builder-step-label">Paso 1 — Tour</div>
                 <select class="builder-select" id="tourSelect">
@@ -1287,10 +1157,10 @@
                 </div>
                 <ul class="itinerary-list" id="itineraryList" style="display:none"></ul>
                 <button class="btn-send-wa" id="btnSendWa" disabled>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Enviar itineratio al WhatsApp
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Enviar a la secretaria
                 </button>
-                <div class="wa-note">Tu pregunta itinerario nos llega por WhatsApp. Respondemos en &lt;24h.</div>
+                <div class="wa-note">Tu itinerario completo llega formateado por WhatsApp. Respondemos en &lt;24h.</div>
             </div>
 
             <!-- CALENDAR TAB -->
@@ -1320,35 +1190,35 @@
     </div><!-- /builder-layout -->
 </section>
 
-<!-- ═══ HOW IT WORKS ═════════════════════════════════════════════════ -->
+<!-- ═══ HOW IT WORKS ══════════════════════════════════════════════ -->
 <section class="section how-section" id="como-funciona">
-    <div class="section-header fade-up">
+    <div class="section-header">
         <div class="section-tag">Proceso</div>
         <h2>¿Cómo reservar?</h2>
         <p>Sin formularios complicados. Reservar es tan sencillo como enviar un mensaje.</p>
     </div>
     <div class="steps-grid">
-        <div class="step-card fade-up">
+        <div class="step-card">
             <div class="step-num">01</div>
             <h4>Elige tu experiencia</h4>
             <p>Navega por el catálogo o usa el planificador para construir tu itinerario completo con fechas y horarios.</p>
         </div>
-        <div class="step-card fade-up">
+        <div class="step-card">
             <div class="step-num">02</div>
             <h4>Escríbenos por WhatsApp</h4>
             <p>Si usaste el planificador, tu itinerario llega formateado automáticamente. Si no, solo cuéntanos qué tour quieres y cuándo.</p>
         </div>
-        <div class="step-card fade-up">
+        <div class="step-card">
             <div class="step-num">03</div>
             <h4>Confirmamos</h4>
-            <p>Te mandamos los detalles del punto de encuentro. Te mandamos un link de pago por el mismo WhatsApp</p>
+            <p>Te mandamos los detalles del punto de encuentro. El pago se realiza el día del tour en efectivo o por transferencia.</p>
         </div>
     </div>
 </section>
 
 <!-- ═══ REVIEWS ══════════════════════════════════════════════════════ -->
 <section class="reviews-section" id="opiniones">
-    <div class="reviews-header fade-up">
+    <div class="reviews-header">
         <div class="section-tag">Opiniones</div>
         <h2>Lo que dicen los viajeros</h2>
     </div>
@@ -1357,18 +1227,18 @@
     </div>
 </section>
 
-<!-- ═══ BOOK ═════════════════════════════════════════════════════════ -->
-<section class="book-section fade-up" id="libro">
+<!-- ═══ BOOK ═══════════════════════════════════════════════════════ -->
+<section class="book-section" id="libro">
     <div class="section-tag">Próximamente</div>
     <h2>12 tours.<br>1 libro.<br><span>Tu Berlín de bolsillo.</span></h2>
     <p>Estoy escribiendo la guía definitiva de Berlín en español: 12 rutas narradas con historia real, anécdotas y los lugares que no encontrarás en ninguna otra guía.<br><br>Ven a uno de mis tours y te regalo un capítulo. El resto... te va a costar dejarlo sin leer.</p>
     <div class="book-ctas">
-        <a href="https://wa.me/4915567304172?text=Hola!%20Me%20interesa%20el%20libro%20de%20Berlin%20Joven" class="btn-primary" target="_blank" rel="noopener">Quiero saber más</a>
+        <a href="https://wa.me/TUNUMERO?text=Hola!%20Me%20interesa%20el%20libro%20de%20Berlin%20Joven" class="btn-primary" target="_blank">Quiero saber más</a>
         <a href="#tours" class="btn-ghost">Ver los tours</a>
     </div>
 </section>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+<!-- ═══ FOOTER ═════════════════════════════════════════════════════ -->
 <footer id="contacto">
     <div class="footer-brand">Berlin <span>Joven</span>©</div>
     <ul class="footer-links">
@@ -1378,53 +1248,51 @@
         <li><a href="#opiniones">Opiniones</a></li>
         <li><a href="#libro">El Libro</a></li>
         <li><a href="/blog">Blog</a></li>
-        <li><a href="https://wa.me/4915567304172" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://instagram.com/berlin.joven" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://tiktok.com/@berlin.joven" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://wa.me/TUNUMERO" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/berlin.joven" target="_blank">Instagram</a></li>
+        <li><a href="https://tiktok.com/@berlin.joven" target="_blank">TikTok</a></li>
     </ul>
     <div class="footer-social">
-        <a href="https://instagram.com/berlin.joven" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://instagram.com/berlin.joven" target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <a href="https://tiktok.com/@berlin.joven" target="_blank" rel="noopener" aria-label="TikTok">
+        <a href="https://tiktok.com/@berlin.joven" target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
         </a>
-        <a href="https://wa.me/4915567304172" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <a href="https://wa.me/TUNUMERO" target="_blank">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
     </div>
     <div class="footer-copy">© 2025 Berlin Joven · berlinjoven.com · Todos los derechos reservados</div>
 </footer>
 
-<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════════ -->
+<!-- ═══ JAVASCRIPT ════════════════════════════════════════════════ -->
 <script>
-// ════════════════════════════════════════════════════════════════════
-//  REVIEWS DATA — preserved exactly
-// ════════════════════════════════════════════════════════════════════
+// ── Reviews data ─────────────────────────────────────────────────────
+// Reemplaza estas reseñas con las tuyas reales. Cada objeto tiene:
+// nombre, pais (emoji + nombre), texto, plataforma ('Google' | 'TripAdvisor' | 'Airbnb')
 const REVIEWS = [
-    { nombre:'Lola',                       pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Feb 2025', texto:'Carlos fue un gran orador, consiguió captar la atención de un grupo grande de adultos. Persona con gran conocimiento de la ciudad y historia. Nos proporcionó consejos según nuestra ruta prevista. Muy recomendable.' },
-    { nombre:'Yolanda',                    pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'Muy amena y enriquecedora. Nuestro guía Carlos ha sido un gran comunicador demostrando estar muy instruido en todos los temas sobre la historia de los lugares que visitamos. Muy cercano y atento, en todo momento se prestaba a resolver dudas y preguntas. El recorrido es largo pero se visitan un montón de lugares interesantes. Totalmente recomendable.' },
-    { nombre:'Pilar Coello Hueso',         pais:'🇪🇸 Madrid',        estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'Estupenda. El guía Carlos, excepcional. Una lección magistral.' },
-    { nombre:'Jesus',                      pais:'🇪🇸 Madrid',        estrellas:5, plataforma:'Civitatis', fecha:'Ene 2025', texto:'Carlos ha sido un guía muy próximo y conocedor del tema, un acierto.' },
-    { nombre:'Maria Sanchez Luque',        pais:'🇪🇸 Valencia',      estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'Carlos, un guía excepcional. Lo recomiendo 100%.' },
-    { nombre:'Mario',                      pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'La actividad de por sí era una pasada, pero fue aún mejor cuando nos tocó Carlos de guía. Nos explicó cada detalle perfectamente. Increíble tour, lo recomiendo 100%.' },
-    { nombre:'Carlos Sanchez',             pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Mar 2025', texto:'Carlos muy profesional. Recomendable 100%. Volvería a reservar en el mismo sitio.' },
-    { nombre:'Eva María Gutiérrez Torres', pais:'🇪🇸 Almería',       estrellas:5, plataforma:'Civitatis', fecha:'Feb 2025', texto:'Carlos nos explicó todo al detalle. Muy buen guía.' },
-    { nombre:'Carlota Salazar Martín',     pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Feb 2025', texto:'Me encantó el tour, de los mejores que he hecho en mi vida. Superinteresante y con la suerte de haber tenido a Carlos como guía: la pasión y facilidad con la que cuenta la Historia. 3h de tour que se me hicieron cortas.' },
-    { nombre:'Maria Isabel Lorenzo Núñez', pais:'🇪🇸 Estepona',     estrellas:5, plataforma:'Civitatis', fecha:'Feb 2025', texto:'Ha sido excelente. Carlos, nuestro guía, nos ha explicado perfectamente toda la historia del muro y de la guerra fría. Muy formal y un gran profesional. Muchas gracias Carlos.' },
-    { nombre:'Erika',                      pais:'🇪🇸 Murcia',        estrellas:5, plataforma:'Civitatis', fecha:'Feb 2025', texto:'Tener a Carlos como guía fue una maravilla. El trato ha sido fantástico, pero más aún toda la información que hemos recibido. Súper bien estructurado y muy bien explicado. Un placer.' },
-    { nombre:'Elena',                      pais:'🇪🇸 Barcelona',     estrellas:4, plataforma:'Civitatis', fecha:'Ene 2025', texto:'El tour fue muy interesante. Las explicaciones del guía Carlos, muy amenas e interesantes. El frío no ayudó a disfrutar la actividad al 100%, ¡pero mereció la pena!' },
-    { nombre:'Maria Dolores',              pais:'🇪🇸 Linares',       estrellas:5, plataforma:'Civitatis', fecha:'Ene 2025', texto:'Carlos ha sido un guía excelente, las explicaciones han sido estupendas. Es muy recomendable tanto el tour como el guía.' },
-    { nombre:'Raul',                       pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'Carlos ha sido un excelente guía, mostrando una preparación magnífica del tema y una pasión contagiosa por la ciudad. Nos ha contado un montón de historias y anécdotas que han hecho que el tour pasara volando. ¡Muy recomendable!' },
-    { nombre:'Eva',                        pais:'🇪🇸 España',        estrellas:5, plataforma:'Civitatis', fecha:'Dic 2024', texto:'Carlos es un guía excelente y ameno. Muy recomendable.' },
-    { nombre:'Marc Julve',                 pais:'🇪🇸 Barcelona',     estrellas:5, plataforma:'Civitatis', fecha:'Mar 2025', texto:'Tour muy recomendable para profundizar en la división de las dos Berlín y las historias de aquellos que perdieron la vida intentando cruzar el muro. Carlos ha sido el guía perfecto, no solo por los conocimientos que transmite, sino por la pasión que le pone. Recomendable 100%.' },
-    { nombre:'Mónica',                     pais:'🇪🇸 Ciudad Real',   estrellas:5, plataforma:'Civitatis', fecha:'Jul 2025', texto:'Hemos hecho el tour con el guía Carlos, nos ha encantado. Por primera vez a mis hijos se les ha hecho corto el tour. Superinteresante, superameno, con historias reales que te enganchan. Un tour y un guía para recomendar. Muchas gracias Carlos.' },
+    { nombre:'María J.',        pais:'🇪🇸 España',      estrellas:5, plataforma:'Google',       texto:'Carlos es increíble. Su pasión por la historia de Berlín es contagiosa. Llevamos 3 horas caminando y no queríamos que terminara. El tour del Muro fue fascinante, explica las historias personales detrás de los datos que conocemos de los libros.' },
+    { nombre:'Andrés M.',       pais:'🇦🇷 Argentina',   estrellas:5, plataforma:'TripAdvisor',  texto:'Sin duda el mejor tour que he hecho en Europa. Carlos tiene una capacidad increíble para hacer que la historia sea emocionante. Fuimos al tour de Nazismo y salimos con una perspectiva completamente nueva. 100% recomendado.' },
+    { nombre:'Valentina P.',    pais:'🇨🇴 Colombia',    estrellas:5, plataforma:'Google',       texto:'Hicimos el Welcome to Berlin y fue la mejor forma de empezar nuestro viaje. Carlos conoce cada rincón de la ciudad y lo explica con mucha energía. El precio libre es genial, se lo merece todo y más.' },
+    { nombre:'Rodrigo F.',      pais:'🇲🇽 México',      estrellas:5, plataforma:'Airbnb',       texto:'El tour alternativo fue una locura. Lugares que no salen en ninguna guía, arte callejero, historia underground... Carlos tiene una forma de contar las cosas que te hace sentir que estás viviendo la época. Volveré a Berlín solo para hacer más tours con él.' },
+    { nombre:'Lucía H.',        pais:'🇪🇸 España',      estrellas:5, plataforma:'TripAdvisor',  texto:'Hicimos el tour completo del sábado (día entero) y fue una experiencia brutal. Recorrimos toda la historia de Berlín en un solo día. Carlos es muy profesional, puntual y con un sentido del humor genial. Lo recomiendo a todo el mundo.' },
+    { nombre:'Diego S.',        pais:'🇨🇱 Chile',       estrellas:5, plataforma:'Google',       texto:'Llevé a mis padres al tour del Muro y se emocionaron muchísimo. Carlos sabe cómo adaptar el nivel de detalle a cada grupo. Explica cosas que ningún guía de un autobús turístico te contará jamás. Una experiencia única.' },
+    { nombre:'Paula R.',        pais:'🇺🇾 Uruguay',     estrellas:5, plataforma:'Google',       texto:'Estuvimos en Berlín una semana y el highlight fue sin duda el tour del nazismo. Fue sobrecogedor pero necesario. Carlos lo maneja con mucho respeto y rigor histórico. Me fui del tour con muchas ganas de leer más.' },
+    { nombre:'Tomás G.',        pais:'🇦🇷 Argentina',   estrellas:5, plataforma:'TripAdvisor',  texto:'El tour a Sachsenhausen fue duro pero imprescindible. Carlos prepara muy bien a los participantes antes de entrar y durante todo el recorrido explica con mucha sensibilidad. Una experiencia que no olvidaré en mi vida.' },
+    { nombre:'Isabella C.',     pais:'🇻🇪 Venezuela',   estrellas:5, plataforma:'Google',       texto:'¡Increíble! Hicimos el tour de Berlín Alternativo y fue como descubrir otra ciudad. Carlos nos llevó por barrios que nunca hubiéramos encontrado solos. Sus historias sobre el street art y la subcultura berlinesa son fascinantes.' },
+    { nombre:'Javier N.',       pais:'🇵🇪 Perú',        estrellas:5, plataforma:'Airbnb',       texto:'El mejor guía de Berlín sin ninguna duda. Lo hemos recomendado a tres grupos de amigos que vinieron después y todos repiten la misma opinión. La experiencia de la cerveza fue muy divertida, y la de Potsdam fue preciosa.' },
+    { nombre:'Sofía L.',        pais:'🇪🇸 España',      estrellas:5, plataforma:'Google',       texto:'Vine sola de viaje y apuntarme al Welcome to Berlin fue lo mejor que hice. Conocí a gente increíble y Carlos hace que te sientas parte de un grupo desde el primer momento. Terminé apuntándome también al tour del Muro al día siguiente.' },
+    { nombre:'Camilo A.',       pais:'🇨🇴 Colombia',    estrellas:5, plataforma:'TripAdvisor',  texto:'Carlos tiene un talento especial para hacer que 3 horas parezcan 30 minutos. Fuimos al tour de Nazismo y fue impresionante la cantidad de detalles y anécdotas que maneja. La historia de Berlín contada así no se olvida.' },
+    { nombre:'Natalia B.',      pais:'🇲🇽 México',      estrellas:5, plataforma:'Google',       texto:'Hicimos el tour de Potsdam y fue un día maravilloso. Carlos conoce perfectamente los palacios y jardines y sabe dónde llevar al grupo para evitar las multitudes. El almuerzo en el mercado que nos recomendó fue delicioso.' },
+    { nombre:'Felipe D.',       pais:'🇨🇱 Chile',       estrellas:5, plataforma:'Google',       texto:'Tour de la Guerra Fría excelente. Carlos combina datos históricos con historias personales de berlineses que vivieron la división. Es una perspectiva muy diferente a lo que lees en los libros de historia. Muy recomendable.' },
 ];
 
-// ── Build reviews marquee ─────────────────────────────────────────
+// ── Build reviews marquee ─────────────────────────────────────────────
 (function buildReviews() {
     const track = document.getElementById('reviewsTrack');
     if (!track) return;
+    // Duplicate list for seamless infinite loop
     const all = [...REVIEWS, ...REVIEWS];
     track.innerHTML = all.map(r => {
         const stars = '★'.repeat(r.estrellas) + '☆'.repeat(5 - r.estrellas);
@@ -1437,7 +1305,7 @@ const REVIEWS = [
                 <div class="review-avatar">${initial}</div>
                 <div>
                     <div class="review-name">${r.nombre}</div>
-                    <div class="review-meta">${r.pais} · ${r.fecha}</div>
+                    <div class="review-meta">${r.pais}</div>
                 </div>
                 <div class="review-platform">${r.plataforma}</div>
             </div>
@@ -1445,9 +1313,7 @@ const REVIEWS = [
     }).join('');
 })();
 
-// ════════════════════════════════════════════════════════════════════
-//  TOURS DATA — preserved exactly
-// ════════════════════════════════════════════════════════════════════
+// ── Tour data ─────────────────────────────────────────────────────────
 const TOURS = {
     welcome:       { nombre:'Welcome to Berlin',           tipo:'free',     precio:'Propina voluntaria', duracionMin:210, evColor:'ev-green', dotColor:'#22C55E', diasDisponibles:[0,1,2,3,4,5,6], getSlots:()=>['09:00','12:00','13:00','16:00'] },
     muro:          { nombre:'Muro de Berlín y G. Fría',    tipo:'free',     precio:'Propina voluntaria', duracionMin:210, evColor:'ev-green', dotColor:'#22C55E', diasDisponibles:[0,2,3,4,5,6],   getSlots:()=>['15:00'] },
@@ -1459,22 +1325,22 @@ const TOURS = {
     completo:      { nombre:'Berlín al Completo',          tipo:'completo', precio:'30€', duracionMin:360, evColor:'ev-gold', dotColor:'#C9A050', diasDisponibles:[6],             getSlots:()=>['09:00'] }
 };
 
-const MESES       = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const MESES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 const MESES_CORTO = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-const DIAS        = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-const DIAS_LARGO  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const DIAS = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+const DIAS_LARGO = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
 
-// ── State ──────────────────────────────────────────────────────────
+// ── State ─────────────────────────────────────────────────────────────
 let state = {
     selectedTour: null,
     calYear: null, calMonth: null,
     selectedDate: null, selectedSlot: null,
     people: 1,
     itinerary: [],
-    gcalWeekStart: null
+    gcalWeekStart: null  // Monday of displayed week
 };
 
-// ── DOM refs ───────────────────────────────────────────────────────
+// ── DOM ───────────────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 const tourSelect = $('tourSelect'), calWrapper = $('calWrapper');
 const slotsStep = $('slotsStep'), slotsContainer = $('slotsContainer');
@@ -1487,7 +1353,7 @@ const gcalDaysHeader = $('gcalDaysHeader'), gcalBody = $('gcalBody');
 const gcalWeekLabel = $('gcalWeekLabel'), conflictWarn = $('conflictWarn');
 const calendarEmpty = $('calendarEmpty'), gcalSection = $('gcalSection');
 
-// ── Helpers ────────────────────────────────────────────────────────
+// ── Helpers ───────────────────────────────────────────────────────────
 function timeToMin(t) { const [h,m]=t.split(':').map(Number); return h*60+m; }
 function minToTime(m) { return `${Math.floor(m/60)}:${String(m%60).padStart(2,'0')}`; }
 function pad2(n) { return String(n).padStart(2,'0'); }
@@ -1499,7 +1365,7 @@ function getMonday(date) {
     d.setDate(d.getDate() + diff); d.setHours(0,0,0,0); return d;
 }
 
-// ── Calendar renderer ──────────────────────────────────────────────
+// ── Calendar renderer ─────────────────────────────────────────────────
 function renderCal() {
     const tour = state.selectedTour ? TOURS[state.selectedTour] : null;
     if (!tour) { calWrapper.innerHTML = '<div class="cal-hint">Selecciona primero un tour.</div>'; return; }
@@ -1534,7 +1400,7 @@ function renderCal() {
     });
 }
 
-// ── Slots ──────────────────────────────────────────────────────────
+// ── Slots ─────────────────────────────────────────────────────────────
 function renderSlots() {
     if (!state.selectedDate || !state.selectedTour) { slotsStep.style.display='none'; peopleStep.style.display='none'; codeStep.style.display='none'; return; }
     const {y,m,d} = state.selectedDate;
@@ -1551,11 +1417,11 @@ function renderSlots() {
     });
 }
 
-// ── People ─────────────────────────────────────────────────────────
+// ── People ────────────────────────────────────────────────────────────
 pplMinus.onclick = () => { if(state.people>1){state.people--;pplCount.textContent=state.people;} };
 pplPlus.onclick  = () => { if(state.people<20){state.people++;pplCount.textContent=state.people;} };
 
-// ── Tour select ────────────────────────────────────────────────────
+// ── Tour select ───────────────────────────────────────────────────────
 tourSelect.onchange = () => {
     state.selectedTour=tourSelect.value||null; state.selectedDate=null; state.selectedSlot=null; state.people=1;
     pplCount.textContent='1'; discountInput.value='';
@@ -1565,7 +1431,7 @@ tourSelect.onchange = () => {
 
 function updateAddBtn() { btnAdd.disabled = !(state.selectedTour && state.selectedDate && state.selectedSlot); }
 
-// ── Tabs ───────────────────────────────────────────────────────────
+// ── Tabs ──────────────────────────────────────────────────────────────
 document.querySelectorAll('.panel-tab').forEach(tab => {
     tab.onclick = () => {
         document.querySelectorAll('.panel-tab').forEach(t=>t.classList.remove('active'));
@@ -1576,7 +1442,7 @@ document.querySelectorAll('.panel-tab').forEach(tab => {
     };
 });
 
-// ── Add to itinerary ───────────────────────────────────────────────
+// ── Add to itinerary ──────────────────────────────────────────────────
 btnAdd.onclick = () => {
     if (!state.selectedTour || !state.selectedDate || !state.selectedSlot) return;
     const tour = TOURS[state.selectedTour];
@@ -1592,12 +1458,13 @@ btnAdd.onclick = () => {
         people: state.people, code:code||null, price
     });
     renderItinerary(); renderGCal();
+    // Reset
     state.selectedDate=null; state.selectedSlot=null;
     discountInput.value='';
     renderCal(); renderSlots(); updateAddBtn();
 };
 
-// ── Conflict detection ─────────────────────────────────────────────
+// ── Conflict detection ────────────────────────────────────────────────
 function itemsConflict(a, b) {
     if (a.date.y!==b.date.y || a.date.m!==b.date.m || a.date.d!==b.date.d) return false;
     const s1=timeToMin(a.slot), e1=s1+a.duracionMin;
@@ -1614,7 +1481,7 @@ function conflictsFor(item) {
     return state.itinerary.filter(other => other.id!==item.id && itemsConflict(item,other));
 }
 
-// ── Render itinerary list ──────────────────────────────────────────
+// ── Render itinerary list ─────────────────────────────────────────────
 function renderItinerary() {
     const count = state.itinerary.length;
     itineraryCount.textContent = count;
@@ -1640,10 +1507,10 @@ function renderItinerary() {
     });
 }
 
-// ── Google Calendar view ───────────────────────────────────────────
-const GCAL_START = 8;
-const GCAL_END   = 21;
-const GCAL_H     = 52;
+// ── Google Calendar ───────────────────────────────────────────────────
+const GCAL_START = 8;   // 08:00
+const GCAL_END   = 21;  // 21:00
+const GCAL_H     = 52;  // px per hour
 
 function getWeekStart() {
     if (state.itinerary.length > 0) {
@@ -1670,15 +1537,18 @@ function renderGCal() {
     if (!state.gcalWeekStart) state.gcalWeekStart = getWeekStart();
 
     const ws = state.gcalWeekStart;
+    // Build week days
     const weekDays = [];
     for (let i=0;i<7;i++) {
         const d = new Date(ws); d.setDate(d.getDate()+i);
         weekDays.push(d);
     }
 
+    // Week label
     const wEnd = weekDays[6];
     gcalWeekLabel.textContent = `${ws.getDate()} ${MESES_CORTO[ws.getMonth()]} – ${wEnd.getDate()} ${MESES_CORTO[wEnd.getMonth()]}`;
 
+    // Days header
     const today = new Date(); today.setHours(0,0,0,0);
     gcalDaysHeader.innerHTML = `<div class="gcal-gutter-header"></div>` +
         weekDays.map(d => {
@@ -1690,34 +1560,41 @@ function renderGCal() {
             </div>`;
         }).join('');
 
+    // Body
     const totalHours = GCAL_END - GCAL_START;
     let bodyHTML = '';
 
+    // Time column
     bodyHTML += `<div class="gcal-time-col">`;
     for (let h=GCAL_START;h<GCAL_END;h++) {
         bodyHTML += `<div class="gcal-time-cell"><span class="gcal-time-label">${pad2(h)}:00</span></div>`;
     }
     bodyHTML += '</div>';
 
+    // Day columns
     weekDays.forEach(day => {
         const dayItems = state.itinerary.filter(it=>
             it.date.y===day.getFullYear()&&it.date.m===day.getMonth()&&it.date.d===day.getDate()
         );
         bodyHTML += `<div class="gcal-day-col" style="height:${totalHours*GCAL_H}px">`;
+        // Hour lines
         for (let h=0;h<totalHours;h++) {
             bodyHTML += `<div class="gcal-hour-line" style="top:${h*GCAL_H}px"></div>`;
             bodyHTML += `<div class="gcal-half-line" style="top:${h*GCAL_H+GCAL_H/2}px"></div>`;
         }
+        // Detect conflicts within this day
         const conflictIds = new Set();
         for (let i=0;i<dayItems.length;i++)
             for (let j=i+1;j<dayItems.length;j++)
                 if (itemsConflict(dayItems[i],dayItems[j])) { conflictIds.add(dayItems[i].id); conflictIds.add(dayItems[j].id); }
 
+        // Render events
         dayItems.forEach((item, idx) => {
             const startMin = timeToMin(item.slot);
             const top = (startMin - GCAL_START*60) * (GCAL_H/60);
             const height = Math.max(item.duracionMin * (GCAL_H/60), 20);
             const isConflict = conflictIds.has(item.id);
+            // If conflict, split column
             let conflictClass = '';
             if (isConflict) {
                 const conflictItems = dayItems.filter(ci=>conflictIds.has(ci.id));
@@ -1736,11 +1613,11 @@ function renderGCal() {
     gcalBody.style.gridTemplateColumns = '44px repeat(7, 1fr)';
 }
 
-// ── GCal navigation ────────────────────────────────────────────────
+// ── GCal navigation ───────────────────────────────────────────────────
 $('gcalPrev').onclick = () => { if(!state.gcalWeekStart) state.gcalWeekStart=getWeekStart(); state.gcalWeekStart.setDate(state.gcalWeekStart.getDate()-7); renderGCal(); };
 $('gcalNext').onclick = () => { if(!state.gcalWeekStart) state.gcalWeekStart=getWeekStart(); state.gcalWeekStart.setDate(state.gcalWeekStart.getDate()+7); renderGCal(); };
 
-// ── Send WhatsApp ──────────────────────────────────────────────────
+// ── Send WhatsApp ─────────────────────────────────────────────────────
 btnSendWa.onclick = () => {
     if (!state.itinerary.length) return;
     let msg = '¡Hola! Me gustaría reservar los siguientes tours con Berlin Joven:\n\n';
@@ -1750,146 +1627,65 @@ btnSendWa.onclick = () => {
         msg += '\n\n';
     });
     msg += '¿Podéis confirmar disponibilidad? ¡Muchas gracias!';
-    window.open(`https://wa.me/4915567304172?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/TUNUMERO?text=${encodeURIComponent(msg)}`, '_blank');
 };
 
-// ── Init (original) ────────────────────────────────────────────────
+// ── Init ──────────────────────────────────────────────────────────────
 (function(){
     const now = new Date();
     state.calYear = now.getFullYear(); state.calMonth = now.getMonth();
     renderCal(); updateAddBtn(); renderGCal();
 })();
+</script>
 
-// ════════════════════════════════════════════════════════════════════
-//  NEW UI ENHANCEMENTS
-// ════════════════════════════════════════════════════════════════════
+<!-- ═══ LIGHTBOX ═══════════════════════════════════════════════════ -->
+<div id="lightbox" class="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-prev" onclick="lbNav(-1)">&#8249;</button>
+    <div class="lb-img-wrap">
+        <img id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-next" onclick="lbNav(1)">&#8250;</button>
+    <div class="lb-counter" id="lb-counter"></div>
+</div>
 
-// ── Enable JS-powered animations (fallback: everything visible) ────
-document.documentElement.classList.add('js-ready');
+<script>
+    let lbImages = [], lbIndex = 0;
 
-// ── Hamburger nav ──────────────────────────────────────────────────
-(function() {
-    const hamburger = document.getElementById('navHamburger');
-    const navLinks  = document.getElementById('navLinks');
-    if (!hamburger || !navLinks) return;
-
-    hamburger.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', String(isOpen));
-        hamburger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-    });
-
-    // Close menu when any link is clicked
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            hamburger.setAttribute('aria-label', 'Abrir menú');
-        });
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-            navLinks.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            hamburger.focus();
-        }
-    });
-})();
-
-// ── Lightbox ───────────────────────────────────────────────────────
-function openLightbox(src, caption) {
-    const lb  = document.getElementById('lightbox');
-    const img = document.getElementById('lightboxImg');
-    const cap = document.getElementById('lightboxCaption');
-    img.src = src;
-    img.alt = caption;
-    cap.textContent = caption;
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    lb.querySelector('.lightbox-close').focus();
-}
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-}
-document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-});
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-});
-
-// ── Stats counter animation ────────────────────────────────────────
-function animateCounters() {
-    document.querySelectorAll('.stat-n[data-count]').forEach(el => {
-        const target   = parseFloat(el.dataset.count);
-        const prefix   = el.dataset.prefix  || '';
-        const suffix   = el.dataset.suffix  || '';
-        const decimals = parseInt(el.dataset.decimals || '0', 10);
-        const duration = 1500;
-        let startTime  = null;
-
-        function step(ts) {
-            if (!startTime) startTime = ts;
-            const progress = Math.min((ts - startTime) / duration, 1);
-            const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-            el.textContent = prefix + (eased * target).toFixed(decimals) + suffix;
-            if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-    });
-}
-
-// ── IntersectionObserver: fade-up + stagger + counter ─────────────
-(function() {
-    // Generic fade-up elements
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const fadeObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('is-visible');
-                fadeObs.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    fadeEls.forEach(el => fadeObs.observe(el));
-
-    // Tour cards: set stagger index, then trigger stagger when grid enters view
-    const toursGrid = document.querySelector('.tours-grid');
-    if (toursGrid) {
-        // Assign stagger index, skip featured (index 0 stays 0)
-        toursGrid.querySelectorAll('.tour-card').forEach((card, i) => {
-            card.style.setProperty('--card-i', i);
-        });
-        const gridObs = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                toursGrid.classList.add('is-staggered');
-                gridObs.unobserve(toursGrid);
-            }
-        }, { threshold: 0.06 });
-        gridObs.observe(toursGrid);
+    function openLightbox(imgs, idx) {
+        lbImages = imgs;
+        lbIndex = idx;
+        document.getElementById('lb-img').src = imgs[idx];
+        document.getElementById('lb-counter').textContent = (idx + 1) + ' / ' + imgs.length;
+        const lb = document.getElementById('lightbox');
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Hide nav arrows if only one image
+        lb.querySelector('.lb-prev').style.display = imgs.length > 1 ? '' : 'none';
+        lb.querySelector('.lb-next').style.display = imgs.length > 1 ? '' : 'none';
     }
 
-    // Stats counter
-    const statsBar = document.querySelector('.stats-bar');
-    if (statsBar) {
-        const statsObs = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateCounters();
-                statsObs.unobserve(statsBar);
-            }
-        }, { threshold: 0.4 });
-        statsObs.observe(statsBar);
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
     }
-})();
+
+    function lbNav(dir) {
+        lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+        document.getElementById('lb-img').src = lbImages[lbIndex];
+        document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + lbImages.length;
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lbNav(-1);
+        if (e.key === 'ArrowRight') lbNav(1);
+    });
 </script>
 </body>
 </html>
-</body>
-</html>
-
