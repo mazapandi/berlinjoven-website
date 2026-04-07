@@ -136,11 +136,26 @@
             gap:1px; background:var(--border);
         }
         .post-card {
-            background:var(--bg); padding:36px 32px;
+            background:var(--bg); padding:0;
             cursor:pointer; transition:background 0.2s;
-            display:flex; flex-direction:column;
+            display:flex; flex-direction:column; overflow:hidden;
         }
         .post-card:hover { background:var(--surface); }
+        .post-thumb {
+            height: 220px; overflow:hidden; flex-shrink:0;
+        }
+        .post-thumb img {
+            width:100%; height:100%; object-fit:cover;
+            opacity:0.85; transition:opacity 0.3s, transform 0.4s;
+            display:block;
+        }
+        .post-card:hover .post-thumb img { opacity:1; transform:scale(1.03); }
+        .post-card .post-cat,
+        .post-card .post-title,
+        .post-card .post-excerpt,
+        .post-card .post-meta { padding-left:32px; padding-right:32px; }
+        .post-card .post-cat { padding-top:28px; }
+        .post-card .post-meta { padding-bottom:32px; }
         .post-cat {
             font-size:10px; letter-spacing:2px; text-transform:uppercase;
             color:var(--gold); margin-bottom:14px;
@@ -365,6 +380,8 @@ const POSTS = [
         categoria: 'gastronomia',
         fecha: 'Abril 2026',
         lectura: '2 min',
+        imagen: '../img/tours-abril-2025/augustiner.webp',
+        imagenPos: 'center 88%',
         extracto: 'Hay cervezas que intentan parecer clásicas. Y luego está la Augustiner. Casi 700 años de historia, sin publicidad, y la única que sirve desde barriles de madera en el Oktoberfest.',
         contenido: `
             <img src="../img/tours-abril-2025/augustiner.webp" alt="Augustiner" style="width:100%;border-radius:3px;margin-bottom:24px;opacity:0.9;">
@@ -406,6 +423,7 @@ function renderPosts(filter) {
 
     grid.innerHTML = filtered.map(post => `
         <div class="post-card" onclick="openPost('${post.id}')">
+            ${post.imagen ? `<div class="post-thumb"><img src="${post.imagen}" alt="${post.titulo}" loading="lazy" style="object-position:${post.imagenPos||'center'};"></div>` : ''}
             <div class="post-cat">${post.categoria.toUpperCase()}</div>
             <div class="post-title">${post.titulo}</div>
             <p class="post-excerpt">${post.extracto}</p>
